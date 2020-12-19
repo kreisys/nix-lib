@@ -63,7 +63,7 @@ rec {
     inherit (pkgs) runCommand git;
   };
 
-  /*  cleanGit: Import and clean up a subtree of a local Git repository.
+  /*  cleanGitSubtree: Import and clean up a subtree of a local Git repository.
 
     Arguments:
     - name: string.
