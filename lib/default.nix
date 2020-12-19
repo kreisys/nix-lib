@@ -10,7 +10,7 @@ rec {
       The root of the source tree to import.
     - subDir: optional string.
       The subdirectory relative to `src` to import.
-    - patterns: optional list of strings.
+    - ignore: optional list of strings.
       Each string is a gitignore pattern which will be ignored.
     - filter: path -> string(type) -> bool.
       Filter function understood by `builtins.path`.
@@ -36,7 +36,7 @@ rec {
       - /nix/store/00000000000000000000000000000000-clean
         - baz.c
 
-    `patterns` are interpreted relative to `subDir`.
+    The patterns in `ignore` are interpreted relative to `subDir`.
 
   */
   cleanSourceWith = import ./clean-source-with.nix {

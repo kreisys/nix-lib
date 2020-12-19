@@ -8,7 +8,7 @@ in
 { name
 , src
 , subDir ? ""
-, patterns ? []
+, ignore ? []
 , filter ? (_: _: true)
 , caller ? "cleanSourceWith"
 , includeSiblings ? false
@@ -22,5 +22,5 @@ in
 
 cleanSourceWith {
   inherit name src subDir caller includeSiblings;
-  filter = gitignoreFilterPure filter patterns origSrcSubDir;
+  filter = gitignoreFilterPure filter ignore origSrcSubDir;
 }
