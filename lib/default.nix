@@ -82,4 +82,12 @@ rec {
     inherit lib cleanSourceWith;
     inherit (pkgs) runCommand git;
   };
+
+  /* Return the first argument if it is not null.
+
+    The second argument is returned when the first is null.
+
+  */
+  orElse = x: y: if x != null then x else y;
+
 }
